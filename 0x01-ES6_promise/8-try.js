@@ -6,4 +6,3 @@ function divideFunction(numerator, denominator) {
 }
 
 export default divideFunction;
-
