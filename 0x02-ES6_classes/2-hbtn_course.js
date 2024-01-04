@@ -1,6 +1,8 @@
 class HolbertonCourse{
 	constructor(name, length, students){
-		if (typeof name !== 'string' || typeeof length !== 'number' || !Array.isArray(students) || !students.every(student => typeof student === 'string')) {
+		if (typeof name !== 'string' || typeof length !== 'number' || 
+		!Array.isArray(students) || !students.every(student => typeof 
+			student === 'string')) {
 			throw new TypeError('Invalid attribute inserted please check');
 		}
 		this._name = name;
@@ -31,18 +33,19 @@ class HolbertonCourse{
 		}
 		this._length = newLength;
 	}
-	// Getter for students
-  	get students() {
-		return this._students;
-  }
+		// Getter for students
+		get students() {
+			return this._students;
+	}
 
-  // Setter for students
-  set students(newStudents) {
-    // Type verification for the array and its elements
-    if (!Array.isArray(newStudents) || !newStudents.every(student => typeof student === 'string')) {
-      throw new TypeError('Students must be an array of strings');
-    }
-    this._students = newStudents;
-  }
+	// Setter for students
+	set students(newStudents) {
+		// Type verification for the array and its elements
+		if (!Array.isArray(newStudents) || 
+		!newStudents.every(student => typeof student === 'string')) {
+		throw new TypeError('Students must be an array of strings');
+		}
+		this._students = newStudents;
+	}
 
 }
