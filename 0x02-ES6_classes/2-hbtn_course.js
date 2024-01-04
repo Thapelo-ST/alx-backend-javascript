@@ -1,10 +1,10 @@
 class HolbertonCourse{
 	constructor(name, length, students){
-		if (typeof name !== 'string' || typeof length !== 'number' || 
-		!Array.isArray(students) || !students.every(student => typeof 
-			student === 'string')) {
-			throw new TypeError('Invalid attribute inserted please check');
-		}
+//		if (typeof name !== 'string' || typeof length !== 'number' || 
+//		!Array.isArray(students) || !students.every(student => typeof 
+//			student === 'string')) {
+//			throw new TypeError('Invalid attribute inserted please check');
+//		}
 		this._name = name;
 		this._length = length;
 		this._students = students;
@@ -33,9 +33,9 @@ class HolbertonCourse{
 		}
 		this._length = newLength;
 	}
-		// Getter for students
-		get students() {
-			return this._students;
+	// Getter for students
+	get students() {
+		return this._students;
 	}
 
 	// Setter for students
@@ -47,5 +47,4 @@ class HolbertonCourse{
 		}
 		this._students = newStudents;
 	}
-
 }
