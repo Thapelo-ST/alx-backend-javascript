@@ -1,7 +1,7 @@
 export default class Building{
     constructor(sqrft){
-        if (typeof sqrft !== 'number') {
-            throw new Error('Square foot must be a number');
+        if (this.target !== Building && new.target.prototype.evacuationWarningMessage === undefined){
+            throw new Error("Class extending Building must override evacuationWarningMessage.");
         }
         this._sqrft = sqrft;
     }
@@ -9,9 +9,5 @@ export default class Building{
     // getter setter for sqrft
     get sqrft(){
         return this._sqrft;
-    }
-
-    evacuationWarningMessage() {
-        throw new Error('Class extending Building must override evacuationWarningMessage');
     }
 }
