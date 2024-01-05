@@ -43,7 +43,7 @@ export default class HolbertonCourse{
 		// Type verification for the array and its elements
 		if (!Array.isArray(newStudents) || 
 		!newStudents.every(student => typeof student === 'string')) {
-		throw new TypeError('Students must be an array of strings');
+			throw new TypeError('Students must be an array of strings');
 		}
 		this._students = newStudents;
 	}

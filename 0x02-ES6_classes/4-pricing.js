@@ -28,7 +28,7 @@ export default class Pricing {
 
     set currency(newCurrency) {
         if (!(newCurrency instanceof Currency)) {
-        throw new Error('Currency must be an instance of Currency class');
+            throw new Error('Currency must be an instance of Currency class');
         }
         this._currency = newCurrency;
     }
@@ -39,7 +39,7 @@ export default class Pricing {
 
     static convertPrice(amount, conversionRate) {
         if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
-        throw new Error('Invalid arguments for convertPrice');
+            throw new Error('Invalid arguments for convertPrice');
         }
         return amount * conversionRate;
     }
