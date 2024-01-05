@@ -2,9 +2,6 @@ import Currency from "./3-currency";
 
 export default class Pricing {
     constructor (amount, currency){
-        if (typeof amount !== 'number' || typeof !(currency instanceof Currency)) {
-            throw new Error('Invalid arguments for pricing')
-        }
         this._amount = amount;
         this._currency = currency;
     }
@@ -38,9 +35,6 @@ export default class Pricing {
     }
 
     static convertPrice(amount, conversionRate) {
-        if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
-            throw new Error('Invalid arguments for convertPrice');
-        }
-        return amount * conversionRate;
+	    return amount * conversionRate;
     }
 }
