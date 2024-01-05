@@ -1,4 +1,4 @@
-class HolbertonCourse{
+export default class HolbertonCourse{
 	constructor(name, length, students){
 //		if (typeof name !== 'string' || typeof length !== 'number' || 
 //		!Array.isArray(students) || !students.every(student => typeof 
