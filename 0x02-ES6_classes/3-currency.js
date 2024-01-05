@@ -1,4 +1,4 @@
-class Currency{
+export default class Currency{
     constructor(code, name){
         if (typeof code !== 'string' || typeof name !== 'string'){
             throw new Error('Both arguments must be strings');
