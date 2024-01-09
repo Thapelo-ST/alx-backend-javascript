@@ -1,4 +1,4 @@
-function getListSudents() {
+export default function getListSudents() {
     const maping = new Map();
     const listStudents = [
         {id: 1, firstName: 'Guillume', location: 'San Francisco'},
