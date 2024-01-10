@@ -5,8 +5,8 @@ export default function updateUniqueTime(inputMap) {
 
     const updatedMap = new Map();
 
-    inputMap.forEach((quantiy, item) => {
-        updatedMap.set(item,quantiy === 1 ? 100 : quantiy);
+    inputMap.forEach((quantity, item) => {
+        updatedMap.set(item, quantity === 1 ? 100 : quantity);
     });
 
     return updatedMap;
