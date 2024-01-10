@@ -1,4 +1,4 @@
-export default function updateStudentGradeByCity (students, city, newGrades) {
+export default function updateStudentGradeByCity(students, city, newGrades) {
 	if (!Array.isArray(students) || !Array.isArray(newGrades)) {
 		return [];
 	}
@@ -6,8 +6,7 @@ export default function updateStudentGradeByCity (students, city, newGrades) {
 		return [];
 	}
     
-	const updatedStudent = students.
-		filter(students => students.location === city)
+	const updatedStudent = students.filter(students => students.location === city)
 		.map((student) => {
 			const grades = newGrades.find(grade => grade.studentId === student.id);
 			return {
