@@ -5,22 +5,21 @@ const calculateNumber = require('./2-calcul_chai');
 describe('calculateNumber function', () => {
     describe('SUM operation', () => {
         it('should return the sum of rounded numbers', () => {
-        expect(calculateNumber('SUM', 1, 3), 4);
-        expect(calculateNumber('SUM', 1, 3.7), 5);
-        expect(calculateNumber('SUM', 1.2, 3.7), 5);
-        expect(calculateNumber('SUM', 1.5, 3.7), 6);
-        expect(calculateNumber('SUM', 1.4, 4.5), 6);
-
+        expect(calculateNumber('SUM', 1, 3)).to.equal(4);
+        expect(calculateNumber('SUM', 1, 3.7)).to.equal(5);
+        expect(calculateNumber('SUM', 1.2, 3.7)).to.equal(5);
+        expect(calculateNumber('SUM', 1.5, 3.7)).to.equal(6);
+        expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);
         });
     });
 
     describe('SUBTRACT operation', () => {
         it('should return the difference of rounded numbers', () => {
-        expect(calculateNumber('SUBTRACT', 5, 3), 2);
-        expect(calculateNumber('SUBTRACT', 5, 3.7), 1);
-        expect(calculateNumber('SUBTRACT', 7.2, 3.7), 3);
-        expect(calculateNumber('SUBTRACT', 9.5, 3.7), 6);
-        expect(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
+        expect(calculateNumber('SUBTRACT', 5, 3)).to.equal(2);
+        expect(calculateNumber('SUBTRACT', 5, 3.7)).to.equal(1);
+        expect(calculateNumber('SUBTRACT', 7.2, 3.7)).to.equal(3);
+        expect(calculateNumber('SUBTRACT', 9.5, 3.7)).to.equal(6);
+        expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
         });
     });
 
