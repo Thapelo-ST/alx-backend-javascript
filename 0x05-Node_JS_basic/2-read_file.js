@@ -1,10 +1,9 @@
-const { count } = require('console');
-const fs = require('fs')
+const fs = require('fs');
 
 function countStudents(path) {
     try {
         if (!fs.existsSync(path)) throw new Error('Cannot load the database');
-        
+
         const data = fs.readFileSync(path, 'utf-8');
         const lines = data.trim().split('\n');
 
@@ -29,18 +28,17 @@ function countStudents(path) {
             }
         }
 
-        console.log(`Number of students: ${lines.length - 1}`)
+        console.log(`Number of students: ${lines.length - 1}`);
         for (const field in countByField) {
             if (countByField.hasOwnProperty(field)) {
                 const count = countByField[field].count;
-                // Check if 'students' is defined before joining
                 const list = countByField[field].students.join(', ');
                 console.log(`Number of students in ${field}: ${count}. List: ${list}`);
             }
         }
-    } catch (error){
-        console.error(error.message)
+    } catch (error) {
+        console.error(error.message);
     }
 }
 
-module.exports =  countStudents;
+module.exports = countStudents;
