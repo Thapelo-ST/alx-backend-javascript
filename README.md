@@ -2,3 +2,5 @@
 
 
 ALX Short specializations
+
+some Folders removed from the repo
