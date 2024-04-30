@@ -8,25 +8,17 @@ function readDatabase(path) {
                 return;
             }
 
-            const counter = {};
-            const lines = data.split("\n").filter((line) => line.trim() !== "");
-            const numberOfStudents = lines.slice(1);
-            let output = `\n`;
-            for (const record of numberOfStudents) {
-                const [firstName, lastName, age, fieldOfStudy] = record.split(",");
-                counter[fieldOfStudy] = (counter[fieldOfStudy] || 0) + 1;
-            }
-            for (const field of Object.keys(counter)) {
-                if (field) {
-                    output += `Number of students in ${field}: ${counter[field]
-                        }. List: ${numberOfStudents
-                            .filter((line) => line.split(",")[3] === field)
-                            .map((line) => line.split(",")[0])
-                            .join(", ")}\n`;
+            const studentsByField = {};
+            const lines = data.trim().split("\n").filter(line => line.trim() !== "");
+
+            lines.slice(1).forEach(line => {
+                const [firstName, lastName, age, fieldOfStudy] = line.split(",");
+                if (!studentsByField[fieldOfStudy]){
+                    studentsByField[fieldOfStudy] = [];
                 }
-            }
-            console.log(output.trim());
-            resolve(output);
+                studentsByField[fieldOfStudy].push(firstName.trim());
+            });
+            resolve(studentsByField);
         });
     });
 }
