@@ -1,0 +1,30 @@
+const app = require("http");
+const countStudents = require("./3-read_file_async");
+
+const server = app.createServer((req, res) => {
+    if (req.url === "/") {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/plain");
+        res.end("Hello Holberton School!");
+    } else if (req.url === "/students") {
+        countStudents(process.argv[2]).then((students) => {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "text/plain");
+            res.end(`This is the list of our students\n${students.trim()}`);
+        }).catch((error) => {
+            res.statusCode = 500;
+            res.setHeader("Content-Type", "text/plain");
+            res.end(`Error: ${error.message}`);
+        });
+    } else {
+        res.statusCode = 404;
+        res.setHeader("Content-Type", "text/plain");
+        res.end("Not Found");
+    }
+});
+
+server.listen(1245, () => {
+    console.log("Server running at localhost:1245");
+});
+
+module.exports = app;

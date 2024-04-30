@@ -20,7 +20,7 @@ if (!process.stdin.isTTY) {
     });
     process.stdin.on('end', function () {
         console.log(`Your name is: ${inputName.trim()}`);
-        console.log("The important code is now closing");
+        console.log("This important software is now closing");
     });
 } else {
     Greetings();
