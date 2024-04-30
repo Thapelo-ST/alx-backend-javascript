@@ -3,7 +3,6 @@ const readDatabase = require("../utils");
 class StudentsController {
     static async getAllStudents(req, res) {
         try {
-
             const StudentsByField = await readDatabase('../database.csv');
             let response = 'This is the list of our students\n';
             const fields = Object.keys(StudentsByField).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
