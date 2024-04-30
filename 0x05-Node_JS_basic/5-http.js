@@ -1,7 +1,7 @@
-const app = require("http");
+const http = require("http");
 const countStudents = require("./3-read_file_async");
 
-const server = app.createServer((req, res) => {
+const app = http.createServer((req, res) => {
     if (req.url === "/") {
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/plain");
@@ -23,7 +23,7 @@ const server = app.createServer((req, res) => {
     }
 });
 
-server.listen(1245, () => {
+app.listen(1245, () => {
     console.log("Server running at localhost:1245");
 });
 

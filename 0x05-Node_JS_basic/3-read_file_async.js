@@ -2,16 +2,15 @@ const fs = require("fs");
 
 function countStudents(path) {
     return new Promise((resolve, reject) => {
-        if (!fs.existsSync(path)) {
-            reject(new Error("Cannot load the database"));
-        }
         fs.readFile(path, "utf8", (err, data) => {
+            if (err) {
+                reject(new Error("Cannot load the database"));
+                return;
+            }
+
             const counter = {};
-            const numberOfStudents = fs
-                .readFileSync(path, "utf8")
-                .split("\n")
-                .filter((line) => line)
-                .slice(1);
+            const lines = data.split("\n").filter(line => line.trim() !== "");
+            const numberOfStudents = lines.slice(1);
             let output = `Number of students: ${numberOfStudents.length}\n`;
             for (const record of numberOfStudents) {
                 const [firstName, lastName, age, fieldOfStudy] = record.split(",");
