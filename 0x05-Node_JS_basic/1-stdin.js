@@ -12,16 +12,15 @@ function Greetings() {
   });
 }
 
-
 if (!process.stdin.isTTY) {
-  console.log(`Welcome to Holberton School, what is your name?`);
+  console.log('Welcome to Holberton School, what is your name?');
   let inputName = '';
   process.stdin.on('data', function (chunk) {
     inputName += chunk.toString();
   });
   process.stdin.on('end', function () {
     console.log(`Your name is: ${inputName.trim()}`);
-    console.log(`This important software is now closing`);
+    console.log('This important software is now closing');
   });
 } else {
   Greetings();

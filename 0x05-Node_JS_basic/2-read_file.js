@@ -13,9 +13,8 @@ function countStudents(path) {
     .slice(1);
   console.log(`Number of students: ${numberOfStudents.length}`);
   for (const record of numberOfStudents) {
-    const [firstName, lastName, age, fieldOfStudy] = record.split(",");
+    const [fieldOfStudy] = record.split(",");
     counter[fieldOfStudy] = (counter[fieldOfStudy] || 0) + 1;
-    //console.log(`Student: ${firstName} ${lastName}, age: ${age}, field: ${fieldOfStudy}`);
   }
 
   for (const field of Object.keys(counter)) {
