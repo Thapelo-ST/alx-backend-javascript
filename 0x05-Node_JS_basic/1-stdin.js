@@ -12,6 +12,7 @@ function Greetings() {
   });
 }
 
+
 if (!process.stdin.isTTY) {
   console.log(`Welcome to Holberton School, what is your name?`);
   let inputName = '';
