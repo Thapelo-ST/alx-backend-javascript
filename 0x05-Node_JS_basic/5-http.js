@@ -17,7 +17,7 @@ const app = http.createServer((req, res) => {
       .catch((error) => {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'text/plain');
-        res.end(`Error: Cannot database`);
+        res.end(`Error: Cannot load the database`);
       });
   } else {
     res.statusCode = 404;

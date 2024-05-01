@@ -9,14 +9,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-  countStudents(process.argv[2])
-    .then((students) => {
-      res
-        .status(200)
-        .send(`This is the list of our students\n${students.trim()}`);
-    })
-    .catch((error) => {
-      res.status(500).send(`Error: Cannot database`);
+  countStudents(process.argv[2]).then((students) => {
+      res.status(200).send(`This is the list of our students\n${students.trim()}`);
+    }).catch((error) => {
+      res.status(500).send(`Error: Cannot load the database`);
     });
 });
 
