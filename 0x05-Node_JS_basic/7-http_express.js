@@ -1,5 +1,7 @@
 const express = require('express');
+
 const app = express();
+
 const countStudents = require('./3-read_file_async');
 
 app.get('/', (req, res) => {
@@ -14,7 +16,7 @@ app.get('/students', (req, res) => {
         .send(`This is the list of our students\n${students.trim()}`);
     })
     .catch((error) => {
-      res.status(500).send(`Error: ${error.message}`);
+      res.status(500).send(`Error: Cannot database`);
     });
 });
 
