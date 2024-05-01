@@ -17,7 +17,8 @@ const app = http.createServer((req, res) => {
       .catch((error) => {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'text/plain');
-        res.end(`Error: ${error.message}`);
+        res.end(`This is the list of our students
+Cannot load the database`);
       });
   } else {
     res.statusCode = 404;
