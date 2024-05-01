@@ -14,7 +14,7 @@ const app = http.createServer((req, res) => {
         res.setHeader('Content-Type', 'text/plain');
         res.end(`This is the list of our students\n${students.trim()}`);
       })
-      .catch((error) => {
+      .catch(() => {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'text/plain');
         res.end(`This is the list of our students
