@@ -4,15 +4,14 @@ function calculateNumber(type, a, b){
 
   switch (type) {
     case 'SUM':
-      sum = roundedA + roundedB;
-      return Math.round(sum);
+      return roundedA + roundedB;
     case 'SUBTRACT':
       subtract = roundedA - roundedB;
-      return Math.round(subtract);
+      return subtract;
     case 'DIVIDE':
       if (roundedB === 0) return 'Error';
       divide = roundedA / roundedB;
-      return Math.round(divide);
+      return divide;
     default:
       throw new Error(
         'Invalid type. Type must be SUM, SUBTRACT, or DIVIDE.'

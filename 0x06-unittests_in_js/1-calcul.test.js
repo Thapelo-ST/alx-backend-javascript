@@ -16,7 +16,7 @@ describe('calculateNumber', () => {
 
   it('should return the correct division', () => {
     assert.strictEqual(calculateNumber('DIVIDE', 10, 2), 5);
-    assert.strictEqual(calculateNumber('DIVIDE', 10, 3), 3);
+    assert.strictEqual(calculateNumber('DIVIDE', 9, 3), 3);
     assert.strictEqual(calculateNumber('DIVIDE', 10, 0), 'Error');
   });
 
